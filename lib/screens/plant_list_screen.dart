@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../theme/theme_provider.dart';
 import '../data/plants_data.dart';
 import '../models/plant.dart';
 import '../widgets/plant_card.dart';
@@ -33,10 +35,25 @@ class _PlantListScreenState extends State<PlantListScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final colorScheme = Theme.of(context).colorScheme;
+    final isDark = themeProvider.isDarkMode;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bitki Bakım Rehberi'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            tooltip: isDark ? 'Açık tema' : 'Koyu tema',
+            icon: Icon(
+              isDark ? Icons.light_mode_rounded : Icons.dark_mode_rounded,
+            ),
+            onPressed: () {
+              themeProvider.toggleTheme();
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -47,9 +64,11 @@ class _PlantListScreenState extends State<PlantListScreen> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.green.shade300,
-                  Colors.green.shade600,
+                  colorScheme.primary.withValues(alpha: 0.75),
+                  colorScheme.primary,
                 ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(20),
             ),
@@ -88,7 +107,7 @@ class _PlantListScreenState extends State<PlantListScreen> {
                 hintText: 'Bitki ara...',
                 prefixIcon: const Icon(Icons.search),
                 filled: true,
-                fillColor: Colors.green.shade50,
+                fillColor: Theme.of(context).inputDecorationTheme.fillColor,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                   borderSide: BorderSide.none,
@@ -116,11 +135,15 @@ class _PlantListScreenState extends State<PlantListScreen> {
                       selectedFilter = filter;
                     });
                   },
-                  selectedColor: Colors.green.shade600,
+                  selectedColor: colorScheme.primary,
+                  backgroundColor: isDark
+                      ? colorScheme.surfaceContainerHighest
+                      : colorScheme.surface,
                   labelStyle: TextStyle(
-                    color: isSelected ? Colors.white : Colors.black87,
+                    color: isSelected ? Colors.white : colorScheme.onSurface,
                     fontWeight: FontWeight.w600,
                   ),
+                  side: BorderSide.none,
                 );
               },
             ),
