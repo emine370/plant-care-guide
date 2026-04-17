@@ -27,7 +27,7 @@ Dart 3.10.0
 
 ```bash
 # Repoyu klonla
-git clone https://github.com/KULLANICI_ADIN/bitki_bakim_rehberi.git
+git clone https://github.com/emine370/plant-care-guide.git
 
 # Proje klasörüne gir
 cd bitki_bakim_rehberi
