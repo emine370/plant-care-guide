@@ -50,21 +50,24 @@ flutter run
 ---
 
 ## Proje Yapısı
+
+```text
 lib/
 ├── main.dart
 ├── models/
-│   └── plant.dart          # fromJson / toJson model sınıfı
+│   └── plant.dart
 ├── data/
-│   └── plants_data.dart    # Bitki verileri (JSON simülasyonu)
+│   └── plants_data.dart
 ├── screens/
 │   ├── plant_list_screen.dart
 │   └── plant_detail_screen.dart
 └── widgets/
-└── plant_card.dart
+    └── plant_card.dart
+```
 
 ---
 
 ## Geliştirici
 
-*Emine Hatun ALTINPINAR*
+**Emine Hatun ALTINPINAR**
 Flutter Günlük Eğitim Projesi
