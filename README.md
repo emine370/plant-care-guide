@@ -60,7 +60,12 @@ lib/
 │   └── plants_data.dart
 ├── screens/
 │   ├── plant_list_screen.dart
-│   └── plant_detail_screen.dart
+│   ├── plant_detail_screen.dart
+│   ├── favorites_screeen.dart
+│   └── welcome_screen.dart
+├── theme/
+│   ├── app_theme.dart
+│   ├── theme_provider.dart
 └── widgets/
     └── plant_card.dart
 ```
