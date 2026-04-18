@@ -3,7 +3,7 @@ import 'package:bitki_bakim_rehberi/main.dart';
 
 void main() {
   testWidgets('Uygulama açılıyor testi', (WidgetTester tester) async {
-    await tester.pumpWidget(const PlantCareApp());
+    await tester.pumpWidget(const MyApp());
 
     expect(find.text('Bitki Bakım Rehberi'), findsOneWidget);
   });
