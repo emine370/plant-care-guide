@@ -43,9 +43,9 @@ flutter run
 
 ## Ekran Görüntüleri
 
-| Ana Sayfa | Bitki Listesi | Detay |
-|-----------|--------------|-------|
-| ![ana](screenshots/home.png) | ![liste](screenshots/list.png) | ![detay](screenshots/detail.png) |
+| Ana Sayfa | Bitki Listesi | Detay | Koyu Tema | Favoriler |
+|-----------|--------------|-------|-----------|-----------|
+| ![ana](screenshots/home.jpg) | ![liste](screenshots/list.jpg) | ![detay](screenshots/detail.jpg) | ![tema](screenshots/dark_tema.jpg) | ![favori](screenshots/favorites.jpg) |
 
 ---
 
